@@ -1,0 +1,5 @@
+jour=int(input("jour ="))
+heure=int(input("heure ="))
+minute=int(input("minute ="))
+minute_ecoule= (jour*24*60+heure*60+minute)
+print("minutes écoulées depuis le début du mois",minute_ecoule)
