@@ -22,3 +22,55 @@ print("\n")
 print("Voici le second triangle isocèle")
 for i in range(nb_ligne, 0, -1):  
     print("* " * i)
+------ps
+def produit_scalaire():
+    v1 = input("Merci de saisir les composantes du vecteur V1 (séparées par des virgules) : ")
+    v2 = input("Merci de saisir les composantes du vecteur V2 (séparées par des virgules) : ")
+
+    try:
+        vecteur1 = [float(x) for x in v1.split(",")]
+        vecteur2 = [float(x) for x in v2.split(",")]
+
+        if len(vecteur1) != len(vecteur2):
+            return "Les vecteurs ne sont pas de la même taille."
+
+        produit = sum(a * b for a, b in zip(vecteur1, vecteur2))
+        return f"Le produit scalaire de V1 et V2 vaut {produit}."
+    except ValueError:
+        return "Erreur : veuillez entrer des nombres valides séparés par des virgules."
+
+resultat = produit_scalaire()
+print(resultat)
+---------ass
+def assurance(age, annee, nbr_accident, anciennete):
+    annee_courante = 2024
+
+    if nbr_accident < 0 or anciennete < 0:
+        return "Anomalie"
+    if age < 16:
+        return "Rouge"
+    if annee > annee_courante or annee < (annee_courante - age):
+        return "Anomalie"
+
+    if age < 25:
+        if anciennete < 2:
+            return "Rouge" if nbr_accident > 0 else "Orange"
+        else:
+            return "Rouge" if nbr_accident > 0 else "Vert"
+    else:
+        if anciennete < 2:
+            return "Rouge" if nbr_accident > 0 else "Orange"
+        else:
+            if nbr_accident == 0:
+                return "Bleu"
+            elif nbr_accident == 1:
+                return "Vert"
+            else:
+                return "Orange"
+
+age = int(input("Âge : "))
+annee = int(input("Année du permis : "))
+nbr_accident = int(input("Nombre d'accidents : "))
+anciennete = int(input("Ancienneté chez l'assureur (années) : "))
+
+print(assurance(age, annee, nbr_accident, anciennete))
