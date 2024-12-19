@@ -1,0 +1,71 @@
+def decomposer_monnaie(somme):
+    billets_100 = somme // 100
+    somme = somme % 100
+    billets_50 = somme // 50
+    somme = somme % 50
+    billets_10 = somme // 10
+    somme = somme % 10
+    pieces_2 = somme // 2
+    somme = somme % 2
+    pieces_1 = somme
+
+    print(f"{somme} euros, c’est donc {billets_100} billets de 100, {billets_50} de 50, {billets_10} de 10, {pieces_2} pièces de 2 et {pieces_1} pièce 1.")
+
+# Test du programme
+somme = int(input("Veuillez saisir une somme d'argent (en euros) : "))
+decomposer_monnaie(somme)
+-----------------------
+def calculer_salaire(heures_travaillees, salaire_horaire):
+    if heures_travaillees <= 160:
+        salaire = heures_travaillees * salaire_horaire
+    elif heures_travaillees <= 200:
+        salaire = (160 * salaire_horaire) + ((heures_travaillees - 160) * salaire_horaire * 1.25)
+    else:
+        salaire = (160 * salaire_horaire) + (40 * salaire_horaire * 1.25) + ((heures_travaillees - 200) * salaire_horaire * 1.5)
+
+    return salaire
+
+# Test du programme
+heures_travaillees = float(input("Nombre d'heures travaillées : "))
+salaire_horaire = float(input("Salaire horaire : "))
+salaire = calculer_salaire(heures_travaillees, salaire_horaire)
+print(f"Le salaire total est : {salaire} euros")
+----------------------
+def taille_chaine(chaine):
+    longueur = 0
+    for char in chaine:
+        longueur += 1
+    return longueur
+
+def pourcentage_voyelles(chaine):
+    voyelles = "aeiouAEIOU"
+    count_voyelles = 0
+    for char in chaine:
+        if char in voyelles:
+            count_voyelles += 1
+    pourcentage = (count_voyelles / len(chaine)) * 100
+    return pourcentage
+
+def sous_chaine(chaine, sous):
+    for i in range(len(chaine) - len(sous) + 1):
+        if chaine[i:i+len(sous)] == sous:
+            return i  # Retourne l'index du début de la première occurrence
+    return -1  # Si la sous-chaîne n'est pas trouvée
+
+def compter_occurrences(chaine, sous):
+    count = 0
+    for i in range(len(chaine) - len(sous) + 1):
+        if chaine[i:i+len(sous)] == sous:
+            count += 1
+    return count
+
+# Test du programme
+chaine = input("Veuillez entrer une chaîne de caractères : ")
+
+print("1. Taille de la chaîne : ", taille_chaine(chaine))
+print("2. Pourcentage de voyelles : ", pourcentage_voyelles(chaine))
+
+sous_chaine_test = "wagon"
+print(f"3. La sous-chaîne '{sous_chaine_test}' commence à l'index : ", sous_chaine(chaine, sous_chaine_test))
+
+print(f"4. Nombre d'occurrences de '{sous_chaine_test}' : ", compter_occurrences(chaine, sous_chaine_test))
