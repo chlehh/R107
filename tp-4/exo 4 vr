@@ -1,0 +1,19 @@
+# Exemple de liste
+L1 = [2, 7, 5, 6, 7, 1, 6, 2, 1, 7, 6]
+
+# Initialiser les variables
+max_nombre = None
+max_frequence = 0
+
+# Parcourir chaque élément de la liste
+for nombre in L1:
+    # Compter les occurrences du nombre
+    frequence = L1.count(nombre)
+    
+    # Mettre à jour le maximum si nécessaire
+    if frequence > max_frequence:
+        max_nombre = nombre
+        max_frequence = frequence
+
+# Afficher le résultat
+print(f"Le nombre le plus fréquent dans la liste est le : {max_nombre} ({max_frequence} x)")
