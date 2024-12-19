@@ -1,0 +1,9 @@
+def tabl_multi(nombre):
+    for i in range(10):  
+        resultat = round(nombre * i, 1)  
+        print(f"{nombre} * {i} = {resultat}")  
+
+nombre = float(input("Vous cherchez la table de multiplication de quel nombre ? "))
+
+print(f"Voici la table de multiplication de {nombre}:")
+tabl_multi(nombre)
