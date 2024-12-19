@@ -7,3 +7,18 @@ nombre = float(input("Vous cherchez la table de multiplication de quel nombre ? 
 
 print(f"Voici la table de multiplication de {nombre}:")
 tabl_multi(nombre)
+
+
+
+----- triangle------
+nb_ligne = int(input("Merci de préciser le nombre de lignes : "))
+
+print("Voici le premier triangle isocèle")
+for i in range(1, nb_ligne + 1): 
+    print("* " * i)
+
+print("\n")
+
+print("Voici le second triangle isocèle")
+for i in range(nb_ligne, 0, -1):  
+    print("* " * i)
