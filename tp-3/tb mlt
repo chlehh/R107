@@ -74,3 +74,15 @@ nbr_accident = int(input("Nombre d'accidents : "))
 anciennete = int(input("Ancienneté chez l'assureur (années) : "))
 
 print(assurance(age, annee, nbr_accident, anciennete))
+-----------
+def tabl_multi(nombre):
+    resultats = []  
+    for i in range(10):  
+        resultat = round(nombre * i, 1)  # Multiplication arrondie à 1 décimale  
+        resultats.append(f"{nombre} * {i} = {resultat}")  # Formatage du résultat  
+    return resultats  
+
+nombre = float(input("Vous cherchez la table de multiplication de quel nombre ? "))
+print(f"Voici la table de multiplication de {nombre}:")
+for ligne in tabl_multi(nombre):
+    print(ligne)
